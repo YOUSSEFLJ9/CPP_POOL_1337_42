@@ -1,32 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.cpp                                         :+:      :+:    :+:   */
+/*   main.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ymomen <ymomen@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/10 11:56:36 by ymomen            #+#    #+#             */
-/*   Updated: 2024/09/10 16:24:22 by ymomen           ###   ########.fr       */
+/*   Created: 2024/09/12 22:08:42 by ymomen            #+#    #+#             */
+/*   Updated: 2024/09/12 22:13:22 by ymomen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#pragma once
+#include <iostream>
+#include <fstream>
 
-Zombie::Zombie()
-{
-    name = "Foo";
-}
-Zombie::~Zombie()
-{
-    std::cout << name << " is dead" << std::endl;
-}
-
-void Zombie:: announce()
-{
-    std::cout << name << " BraiiiiiiinnnzzzZ..." << std::endl;
-}
-
-void Zombie::setName(std::string name)
-{
-    this->name = name;
-}
+std::string ft_replace(size_t pos, size_t lengh, std::string replace, std::string line);

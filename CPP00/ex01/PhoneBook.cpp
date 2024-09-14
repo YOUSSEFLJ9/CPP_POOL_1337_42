@@ -6,7 +6,7 @@
 /*   By: ymomen <ymomen@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/06 19:33:29 by ymomen            #+#    #+#             */
-/*   Updated: 2024/09/08 18:49:43 by ymomen           ###   ########.fr       */
+/*   Updated: 2024/09/13 14:29:36 by ymomen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,8 @@ void PhoneBook::search_contact()
     }
     std::cout << "\nEnter the index of the contact you want to see" << std::endl;
     std::getline(std::cin, index);
+    if(std::cin.eof())
+        exit(1);
     if (index.length() == 1 && index[0] >= '1' && index[0] <= '8')
     {
         i = index[0] - '1';

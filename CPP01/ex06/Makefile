@@ -5,30 +5,29 @@
 #                                                     +:+ +:+         +:+      #
 #    By: ymomen <ymomen@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2024/09/10 12:25:30 by ymomen            #+#    #+#              #
-#    Updated: 2024/09/10 12:42:31 by ymomen           ###   ########.fr        #
+#    Created: 2024/09/13 12:09:27 by ymomen            #+#    #+#              #
+#    Updated: 2024/09/14 18:45:01 by ymomen           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
+NAME = harlFilter
 CC = c++
-CFLAGS = -Wall -Wextra -Werror -std=c++98
-NAME = BraiiiiiiinnnzzzZ
-SRC = Zombie.cpp main.cpp newZombie.cpp randomChump.cpp
-OBJ = $(SRC:.cpp=.o)
+FLAGS= -Wall -Wextra -Werror -std=c++98
+SRCS = Harl.cpp main.cpp
+OBJS =  $(SRCS:.cpp=.o)
 RM = rm -f
 
 all: $(NAME)
 
-$(NAME): $(OBJ)
-	$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
+$(NAME) : $(OBJS)
+	$(CC) $(FLAGS) $(OBJS) -o $(NAME)
 
-%.o: %.cpp Zombie.hpp
-	$(CC) $(CFLAGS) -c $< -o $@
-
+%.o :%.cpp  Harl.hpp
+	$(CC) $(FLAGS) -c $< -o $@
 clean:
-	$(RM) $(OBJ)
+	$(RM) $(OBJS)
 
-fclean: clean
+fclean : clean
 	$(RM) $(NAME)
 
 re: fclean all

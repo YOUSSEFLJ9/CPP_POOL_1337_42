@@ -5,28 +5,28 @@
 #                                                     +:+ +:+         +:+      #
 #    By: ymomen <ymomen@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2024/09/10 12:25:30 by ymomen            #+#    #+#              #
-#    Updated: 2024/09/10 12:42:31 by ymomen           ###   ########.fr        #
+#    Created: 2024/09/12 12:17:09 by ymomen            #+#    #+#              #
+#    Updated: 2024/09/14 19:17:19 by ymomen           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
+NAME = Unnecessary_violence
 CC = c++
-CFLAGS = -Wall -Wextra -Werror -std=c++98
-NAME = BraiiiiiiinnnzzzZ
-SRC = Zombie.cpp main.cpp newZombie.cpp randomChump.cpp
-OBJ = $(SRC:.cpp=.o)
+FLAGS = -Wall -Wextra -Werror -std=c++98
+SRCS = main.cpp HumanA.cpp HumanB.cpp Weapon.cpp
+OBJS = $(SRCS:.cpp=.o)
 RM = rm -f
 
 all: $(NAME)
 
-$(NAME): $(OBJ)
-	$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
-
-%.o: %.cpp Zombie.hpp
-	$(CC) $(CFLAGS) -c $< -o $@
+$(NAME): $(OBJS)
+	$(CC) $(FLAGS) $(OBJS) -o $(NAME)
+	
+%.o: %.cpp HumanA.hpp HumanB.hpp Weapon.hpp
+	$(CC) $(FLAGS) -c $< -o $@
 
 clean:
-	$(RM) $(OBJ)
+	$(RM) $(OBJS)
 
 fclean: clean
 	$(RM) $(NAME)

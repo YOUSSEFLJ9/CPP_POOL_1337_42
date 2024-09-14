@@ -6,7 +6,7 @@
 /*   By: ymomen <ymomen@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/08 19:13:34 by ymomen            #+#    #+#             */
-/*   Updated: 2024/09/10 09:51:51 by ymomen           ###   ########.fr       */
+/*   Updated: 2024/09/13 14:42:10 by ymomen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ Account::~Account( void )
 {
     _displayTimestamp();
     static int i = 0;
-    std::cout << "index:" << i % Account ::_nbAccounts << ";amount:" << _amount << ";closed" << std::endl;
+    std::cout << "index:" << this->_accountIndex << ";amount:" << _amount << ";closed" << std::endl;
     i++;
 }
 

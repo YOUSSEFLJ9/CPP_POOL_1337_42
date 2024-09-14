@@ -6,7 +6,7 @@
 /*   By: ymomen <ymomen@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/06 18:44:05 by ymomen            #+#    #+#             */
-/*   Updated: 2024/09/08 20:25:48 by ymomen           ###   ########.fr       */
+/*   Updated: 2024/09/13 14:46:13 by ymomen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,8 +59,8 @@ void Contact::set_firstname()
     while (1)
     {
         std::cout << "Enter first name: ";
-        if (!std::getline(std::cin, str))
-            exit(0);
+        if (!std::getline(std::cin, str)|| std::cin.eof())
+            exit(1);
         if (!_is_space(str) && !str.empty())
         {
             _firstname = str;
@@ -77,8 +77,8 @@ void Contact::set_lastname()
     while (1)
     {
         std::cout << "Enter last name: ";
-        if (!std::getline(std::cin, str))
-            exit(0);
+        if (!std::getline(std::cin, str)|| std::cin.eof())
+            exit(1);
         if (!_is_space(str) && !str.empty())
         {
             _lastname = str;
@@ -95,8 +95,8 @@ void Contact::set_nickname()
     while (1)
     {
         std::cout << "Enter nickname: ";
-        if (!std::getline(std::cin, str))
-            exit(0);
+        if (!std::getline(std::cin, str)|| std::cin.eof())
+            exit(1);
         if (!_is_space(str) && !str.empty())
         {
             _nickname = str;
@@ -113,8 +113,8 @@ void Contact::set_phonenumber()
     while (1)
     {
         std::cout << "Enter phone number: ";
-       if (!std::getline(std::cin, str))
-            exit(0);
+       if (!std::getline(std::cin, str)|| std::cin.eof())
+            exit(1);
         if (_is_digit(str) && !str.empty())
         {
             _phonenumber = str;
@@ -131,8 +131,8 @@ void Contact::set_darksecret()
     while (1)
     {
         std::cout << "Enter dark secret: ";
-        if (!std::getline(std::cin, str))
-            exit(0);
+        if (!std::getline(std::cin, str)|| std::cin.eof())
+            exit(1);
         if (!_is_space(str) && !str.empty())
         {
             _darksecret = str;

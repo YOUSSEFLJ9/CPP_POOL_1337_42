@@ -5,28 +5,28 @@
 #                                                     +:+ +:+         +:+      #
 #    By: ymomen <ymomen@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2024/09/10 12:25:30 by ymomen            #+#    #+#              #
-#    Updated: 2024/09/10 12:42:31 by ymomen           ###   ########.fr        #
+#    Created: 2024/09/10 13:30:17 by ymomen            #+#    #+#              #
+#    Updated: 2024/09/10 16:33:49 by ymomen           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC = c++
-CFLAGS = -Wall -Wextra -Werror -std=c++98
-NAME = BraiiiiiiinnnzzzZ
-SRC = Zombie.cpp main.cpp newZombie.cpp randomChump.cpp
-OBJ = $(SRC:.cpp=.o)
+NAME = MoarBrainz
+SRCS = main.cpp Zombie.cpp zombieHorde.cpp
+OBJS = $(SRCS:.cpp=.o)
+FLAGS = -Wall -Wextra -Werror -std=c++98
 RM = rm -f
 
 all: $(NAME)
 
-$(NAME): $(OBJ)
-	$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
+$(NAME): $(OBJS)
+	$(CC) $(FLAGS) $(OBJS) -o $(NAME)
 
 %.o: %.cpp Zombie.hpp
-	$(CC) $(CFLAGS) -c $< -o $@
+	$(CC) $(FLAGS) -c $< -o $@
 
 clean:
-	$(RM) $(OBJ)
+	$(RM) $(OBJS)
 
 fclean: clean
 	$(RM) $(NAME)

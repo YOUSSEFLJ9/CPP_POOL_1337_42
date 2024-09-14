@@ -1,32 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.cpp                                         :+:      :+:    :+:   */
+/*   Harl.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ymomen <ymomen@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/10 11:56:36 by ymomen            #+#    #+#             */
-/*   Updated: 2024/09/10 16:24:22 by ymomen           ###   ########.fr       */
+/*   Created: 2024/09/14 18:36:46 by ymomen            #+#    #+#             */
+/*   Updated: 2024/09/14 18:55:05 by ymomen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#pragma once
+#include  <iostream>
 
-Zombie::Zombie()
-{
-    name = "Foo";
-}
-Zombie::~Zombie()
-{
-    std::cout << name << " is dead" << std::endl;
-}
+enum levels{DEBUG = 1,INFO=2, WARNING=3, ERROR=4 };
 
-void Zombie:: announce()
+class Harl
 {
-    std::cout << name << " BraiiiiiiinnnzzzZ..." << std::endl;
-}
+private:
+   void debug(void);
+   void info(void);
+   void warning(void);
+   void error(void);
+   int get_idex(std::string level);
+public:
+    Harl();
+    ~Harl();
+    void complain(std::string level);
 
-void Zombie::setName(std::string name)
-{
-    this->name = name;
-}
+};

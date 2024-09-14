@@ -1,32 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.cpp                                         :+:      :+:    :+:   */
+/*   HumanB.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ymomen <ymomen@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/10 11:56:36 by ymomen            #+#    #+#             */
-/*   Updated: 2024/09/10 16:24:22 by ymomen           ###   ########.fr       */
+/*   Created: 2024/09/10 23:29:39 by ymomen            #+#    #+#             */
+/*   Updated: 2024/09/12 13:52:15 by ymomen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#include "HumanB.hpp"
 
-Zombie::Zombie()
+HumanB::HumanB(std::string name): name(name)
 {
-    name = "Foo";
-}
-Zombie::~Zombie()
-{
-    std::cout << name << " is dead" << std::endl;
 }
 
-void Zombie:: announce()
+void HumanB::attack()
 {
-    std::cout << name << " BraiiiiiiinnnzzzZ..." << std::endl;
+    if (weapon)
+        std::cout << name << " attacks with their " << weapon->getType() << std::endl;
+    else
+        std::cout << name << " attacks with their hands" << std::endl;
 }
 
-void Zombie::setName(std::string name)
+void HumanB::setWeapon(Weapon &weapon)
 {
-    this->name = name;
+    this->weapon = &weapon;
+}
+
+HumanB::~HumanB()
+{
 }

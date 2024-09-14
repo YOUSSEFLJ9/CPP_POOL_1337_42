@@ -6,7 +6,7 @@ std::string to_uper(std:: string s)
     int len = s.length();
     while(i < len)
     {
-        s[i] = toupper(s[i]);
+        s[i] =  std::toupper(s[i]);
         i++;
     }
     return (s);

@@ -1,32 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.cpp                                         :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ymomen <ymomen@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/10 11:56:36 by ymomen            #+#    #+#             */
-/*   Updated: 2024/09/10 16:24:22 by ymomen           ###   ########.fr       */
+/*   Created: 2024/09/14 18:35:00 by ymomen            #+#    #+#             */
+/*   Updated: 2024/09/14 18:57:44 by ymomen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#include "Harl.hpp"
 
-Zombie::Zombie()
+int main(int ac, char **av)
 {
-    name = "Foo";
-}
-Zombie::~Zombie()
-{
-    std::cout << name << " is dead" << std::endl;
-}
-
-void Zombie:: announce()
-{
-    std::cout << name << " BraiiiiiiinnnzzzZ..." << std::endl;
-}
-
-void Zombie::setName(std::string name)
-{
-    this->name = name;
+    if (ac != 2)
+    {
+        std::cout <<"Error\n";
+        std::cout <<"Usage :" << av[0] <<" level"<<std::endl;
+        return (1);
+    }
+    
+    std::string level = av[1];
+    Harl harl;
+    harl.complain(level);
+    
+    return (0);
 }

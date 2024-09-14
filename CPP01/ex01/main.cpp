@@ -1,32 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.cpp                                         :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ymomen <ymomen@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/10 11:56:36 by ymomen            #+#    #+#             */
-/*   Updated: 2024/09/10 16:24:22 by ymomen           ###   ########.fr       */
+/*   Created: 2024/09/10 16:30:07 by ymomen            #+#    #+#             */
+/*   Updated: 2024/09/10 23:06:40 by ymomen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
 
-Zombie::Zombie()
+int main()
 {
-    name = "Foo";
-}
-Zombie::~Zombie()
-{
-    std::cout << name << " is dead" << std::endl;
-}
+    Zombie* horde = zombieHorde(5, "ZOOOMBIE");
+    if (horde == NULL)
+    {
+        std::cout << "Error: invalid number of zombies" << std::endl;
+        return (1);
+    }
 
-void Zombie:: announce()
-{
-    std::cout << name << " BraiiiiiiinnnzzzZ..." << std::endl;
-}
-
-void Zombie::setName(std::string name)
-{
-    this->name = name;
+    for (int i = 0; i < 5; i++)
+        horde[i].announce();
+    delete [] horde;
+    return (0);
 }

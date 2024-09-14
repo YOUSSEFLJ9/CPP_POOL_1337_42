@@ -1,21 +1,23 @@
-/* ************************************************************************** */
+ /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ymomen <ymomen@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/10 12:11:03 by ymomen            #+#    #+#             */
-/*   Updated: 2024/09/10 12:45:34 by ymomen           ###   ########.fr       */
+/*   Created: 2024/09/13 17:03:42 by ymomen            #+#    #+#             */
+/*   Updated: 2024/09/13 17:03:59 by ymomen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#include "Harl.hpp"
+
 int main()
 {
-    Zombie *zombie1 = newZombie("Zombie1");
-    zombie1->announce();
-    randomChump("Zombie2");
-    delete zombie1;
+    Harl harl;
+    harl.complain("DEBUG");
+    harl.complain("INFO");
+    harl.complain("WARNING");
+    harl.complain("ERROR");
     return (0);
 }

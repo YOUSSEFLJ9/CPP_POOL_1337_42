@@ -5,32 +5,32 @@
 #                                                     +:+ +:+         +:+      #
 #    By: ymomen <ymomen@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2024/09/10 12:25:30 by ymomen            #+#    #+#              #
-#    Updated: 2024/09/10 12:42:31 by ymomen           ###   ########.fr        #
+#    Created: 2024/09/12 14:50:09 by ymomen            #+#    #+#              #
+#    Updated: 2024/09/14 19:17:34 by ymomen           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-CC = c++
-CFLAGS = -Wall -Wextra -Werror -std=c++98
-NAME = BraiiiiiiinnnzzzZ
-SRC = Zombie.cpp main.cpp newZombie.cpp randomChump.cpp
-OBJ = $(SRC:.cpp=.o)
+NAME = Sed_is_for_losers
+SRCS = main.cpp ft_replace.cpp
+OBJS = $(SRCS:.cpp=.o)
+FLAGS = -Wall -Wextra -Werror -std=c++98
 RM = rm -f
+CC = c++
 
 all: $(NAME)
 
-$(NAME): $(OBJ)
-	$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
+$(NAME): $(OBJS)
+	$(CC) $(FLAGS) $(OBJS) -o $(NAME)
 
-%.o: %.cpp Zombie.hpp
-	$(CC) $(CFLAGS) -c $< -o $@
+%.o: %.cpp main.hpp
+	$(CC) $(FLAGS) -c $< -o $@
 
 clean:
-	$(RM) $(OBJ)
+	$(RM) $(OBJS)
 
 fclean: clean
 	$(RM) $(NAME)
 
 re: fclean all
 
-.PHONY: all clean fclean re
+.PHONY: all clean fclean re	

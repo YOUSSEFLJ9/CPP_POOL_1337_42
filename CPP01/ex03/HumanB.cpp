@@ -6,13 +6,13 @@
 /*   By: ymomen <ymomen@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/10 23:29:39 by ymomen            #+#    #+#             */
-/*   Updated: 2024/09/12 13:52:15 by ymomen           ###   ########.fr       */
+/*   Updated: 2024/09/19 12:01:08 by ymomen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "HumanB.hpp"
 
-HumanB::HumanB(std::string name): name(name)
+HumanB::HumanB(std::string name): name(name) , weapon(NULL)
 {
 }
 

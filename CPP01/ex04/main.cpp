@@ -6,11 +6,11 @@
 /*   By: ymomen <ymomen@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/12 14:51:53 by ymomen            #+#    #+#             */
-/*   Updated: 2024/09/14 15:11:57 by ymomen           ###   ########.fr       */
+/*   Updated: 2024/09/19 12:07:00 by ymomen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "main.hpp"
+#include "Main.hpp"
 
 int main(int ac, char **av)
 {
@@ -55,8 +55,10 @@ int main(int ac, char **av)
     {
         myfile.close();
          std::cout << "Error: can't create file";
-        return (1);   
+        return (1);
     }
     mynewfile << newline;
-    
+    myfile.close();
+    mynewfile.close();
+    return (0);
 }

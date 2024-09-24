@@ -6,7 +6,7 @@
 /*   By: ymomen <ymomen@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/13 14:14:04 by ymomen            #+#    #+#             */
-/*   Updated: 2024/09/14 19:08:41 by ymomen           ###   ########.fr       */
+/*   Updated: 2024/09/17 17:49:32 by ymomen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,15 +23,13 @@ Harl::~Harl()
 }
 int Harl::get_idex(std::string level)
 {
-    if (level == "DEBUG")
-        return (DEBUG);
-    else if (level == "INFO")
-        return (INFO);
-    else if (level == "WARNING")
-        return (WARNING);
-    else if (level == "ERROR")
-        return (ERROR);
-    return (0);
+    std::string levels[4] = {"DEBUG", "INFO", "WARNING", "ERROR"};
+    for (int i = 0; i < 4; i++)
+    {
+        if (levels[i] == level)
+            return i + 1;
+    }
+    return 0;
 }
 
 void Harl::debug(void)

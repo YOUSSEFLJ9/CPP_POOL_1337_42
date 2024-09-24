@@ -1,25 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   newZombie.cpp                                      :+:      :+:    :+:   */
+/*   Fixed.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ymomen <ymomen@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/10 12:38:45 by ymomen            #+#    #+#             */
-/*   Updated: 2024/09/17 17:22:58 by ymomen           ###   ########.fr       */
+/*   Created: 2024/09/15 19:41:28 by ymomen            #+#    #+#             */
+/*   Updated: 2024/09/24 20:01:57 by ymomen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
 
-  Zombie* newZombie( std::string name )
+#pragma once
+
+#include <iostream>
+
+class Fixed
 {
-    Zombie *zombie = new(std::nothrow) Zombie();
-    if (!zombie)
-    {
-        std::cerr << "Memory allocation failed" << std::endl;
-        return (NULL);
-    }
-    zombie->setName(name);
-    return (zombie);
-}
+private:
+    int _value;
+    static const int _fractionalBits = 8;
+public:
+    Fixed();
+    ~Fixed();
+    Fixed(const Fixed &fixed);
+    Fixed &operator=(const Fixed &fixed);
+    int getRawBits(void) const;
+    void setRawBits(int const raw);
+};

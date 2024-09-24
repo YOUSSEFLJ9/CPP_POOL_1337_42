@@ -6,7 +6,7 @@
 /*   By: ymomen <ymomen@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/10 23:17:41 by ymomen            #+#    #+#             */
-/*   Updated: 2024/09/12 13:52:54 by ymomen           ###   ########.fr       */
+/*   Updated: 2024/09/19 12:02:08 by ymomen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 HumanA::HumanA(std::string name, Weapon &weapon): name(name), weapon(weapon)
 {
+    
 }
 
 void HumanA::attack()

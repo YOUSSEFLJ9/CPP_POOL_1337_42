@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_replace.cpp                                     :+:      :+:    :+:   */
+/*   Ft_Replace.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ymomen <ymomen@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/12 22:07:06 by ymomen            #+#    #+#             */
-/*   Updated: 2024/09/13 10:26:37 by ymomen           ###   ########.fr       */
+/*   Updated: 2024/09/17 17:32:45 by ymomen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "main.hpp"
+#include "Main.hpp"
 
 std::string ft_replace(size_t pos, size_t len, std::string replace, std::string line)
 {

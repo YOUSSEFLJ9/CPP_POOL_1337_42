@@ -6,7 +6,7 @@
 /*   By: ymomen <ymomen@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/24 22:39:35 by ymomen            #+#    #+#             */
-/*   Updated: 2024/10/01 10:58:06 by ymomen           ###   ########.fr       */
+/*   Updated: 2024/10/02 18:20:51 by ymomen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ class ClapTrap
 
     public:
     ClapTrap();
-    ClapTrap(std::string name);
+    ClapTrap(const std::string name);
     ClapTrap(const ClapTrap &CT);
     ClapTrap &operator=(const ClapTrap &CT);
     ~ClapTrap();

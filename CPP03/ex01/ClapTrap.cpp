@@ -6,7 +6,7 @@
 /*   By: ymomen <ymomen@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/24 22:45:36 by ymomen            #+#    #+#             */
-/*   Updated: 2024/10/01 22:54:37 by ymomen           ###   ########.fr       */
+/*   Updated: 2024/10/02 18:23:19 by ymomen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ ClapTrap::ClapTrap(): name("default"), hitpoints(10), energy_points(0), attack_d
     std::cout << "\033[32mClapTrap default constructor called, " << name << "\033[0m" << std::endl;
 }
 
-ClapTrap::ClapTrap(std::string name) : hitpoints(10), energy_points(0), attack_damage(0)
+ClapTrap::ClapTrap(const std::string name) : hitpoints(10), energy_points(0), attack_damage(0)
 {
     std::cout << "\033[32mClapTrap constructor called, " << name << "\033[0m" << std::endl;
     this->name = name;

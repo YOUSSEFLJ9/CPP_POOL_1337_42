@@ -6,34 +6,35 @@
 /*   By: ymomen <ymomen@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/25 11:25:10 by ymomen            #+#    #+#             */
-/*   Updated: 2024/10/02 15:18:02 by ymomen           ###   ########.fr       */
+/*   Updated: 2024/10/02 19:30:54 by ymomen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScavTrap.hpp"
+#include "FragTrap.hpp"
 
 int main()
 {
-
-    ScavTrap lion("RB_Lion");
-    ScavTrap monster(lion);
-    monster.setName("Monster");
-    ScavTrap centaur;
-    centaur = monster;
-    centaur.setName("Centaur");
-
+    FragTrap Luffy("Luffy");
+    FragTrap Zoro(Luffy);
+    FragTrap Sanji = Zoro;
+    Zoro.setName("Zoro");
+    Sanji.setName("Sanji");
     std:: cout <<"-------------------------------------------------"<<std ::endl;
-    lion.attack(centaur.getName());
-    centaur.takeDamage(lion.getAttackDamage());
-    lion.attack(monster.getName());
-    monster.takeDamage(lion.getAttackDamage());
-    centaur.attack(lion.getName());
-    lion.takeDamage(20);
-    centaur.attack(monster.getName());
-    monster.takeDamage(20);
-    centaur.beRepaired(50);
-    
+    FragTrap Kaido("Kaido");
     std:: cout <<"-------------------------------------------------"<<std ::endl;
-    monster.guardGate();
+    Luffy.attack("Kaido");
+    Kaido.takeDamage(Luffy.getAttackDamage());
+    Zoro.attack("Kaido");
+    Kaido.takeDamage(Zoro.getAttackDamage());
+    Sanji.attack("Kaido");
+    Kaido.takeDamage(Sanji.getAttackDamage());
+    Kaido.beRepaired(18);
+    Kaido.attack("Luffy");
+    Luffy.takeDamage(Kaido.getAttackDamage());
+    Luffy.attack("Kaido");
+    Kaido.takeDamage(Luffy.getAttackDamage());
+    Kaido.beRepaired(50);
+    std:: cout <<"-------------------------------------------------"<<std ::endl;
+    Luffy.highFivesGuys();
     return 0;
 }

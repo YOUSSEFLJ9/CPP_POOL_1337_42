@@ -6,13 +6,15 @@
 /*   By: ymomen <ymomen@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/22 18:55:49 by ymomen            #+#    #+#             */
-/*   Updated: 2024/09/24 20:02:20 by ymomen           ###   ########.fr       */
+/*   Updated: 2024/09/25 11:36:27 by ymomen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
 #include "Fixed.hpp"
 
+
+const int Fixed::_fractionalBits = 8;
 
 Fixed::Fixed()
 {

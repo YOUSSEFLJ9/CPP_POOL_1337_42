@@ -6,7 +6,7 @@
 /*   By: ymomen <ymomen@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/22 18:55:49 by ymomen            #+#    #+#             */
-/*   Updated: 2024/09/24 06:26:40 by ymomen           ###   ########.fr       */
+/*   Updated: 2024/09/24 20:51:31 by ymomen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,46 +17,46 @@ const int Fixed :: _fractionalBits = 8;
 
 Fixed::Fixed()
 {
-    std::cout << "Default constructor called" << std::endl;
+    // std::cout << "Default constructor called" << std::endl;
     _value = 0;
 }
 Fixed::Fixed(int const value)
 {
-    std::cout << "Int constructor called" << std::endl;
+    // std::cout << "Int constructor called" << std::endl;
     _value = value << _fractionalBits;
 }
 Fixed::Fixed(const float value)
 {
-    std::cout << "Float constructor called" << std::endl;
+    // std::cout << "Float constructor called" << std::endl;
     _value = roundf(value * (1 << _fractionalBits));
 }
 
 Fixed::Fixed(const Fixed &fixed)
 {
-    std::cout << "Copy constructor called" << std::endl;
+    // std::cout << "Copy constructor called" << std::endl;
     *this = fixed;    
 }
 Fixed::~Fixed()
 {
-    std::cout << "Destructor called" << std::endl;
+    // std::cout << "Destructor called" << std::endl;
 }
 
 Fixed &Fixed::operator=(const Fixed &fixed)
 {
-    std::cout << "Assignation operator called" << std::endl;
+    // std::cout << "Assignation operator called" << std::endl;
     _value = fixed.getRawBits();
     return *this;
 }
 
 int Fixed::getRawBits(void) const
 {
-    std::cout << "getRawBits member function called" << std::endl;
+    // std::cout << "getRawBits member function called" << std::endl;
     return _value;
 }
 
 void Fixed::setRawBits(int const raw)
 {
-    std::cout << "setRawBits member function called" << std::endl;
+    // std::cout << "setRawBits member function called" << std::endl;
     _value = raw;
 }
 

@@ -6,7 +6,7 @@
 /*   By: ymomen <ymomen@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/15 19:41:28 by ymomen            #+#    #+#             */
-/*   Updated: 2024/09/24 06:00:09 by ymomen           ###   ########.fr       */
+/*   Updated: 2024/09/25 11:43:59 by ymomen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,3 +57,7 @@ public:
 };
 
 std::ostream &operator<<(std::ostream &out, const Fixed &fixed);
+
+
+
+

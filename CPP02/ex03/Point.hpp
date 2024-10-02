@@ -6,7 +6,7 @@
 /*   By: ymomen <ymomen@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/24 07:14:19 by ymomen            #+#    #+#             */
-/*   Updated: 2024/09/24 07:49:05 by ymomen           ###   ########.fr       */
+/*   Updated: 2024/09/24 21:00:49 by ymomen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,8 @@ public:
     Point(const Point &point);
     ~Point();
     Point &operator=(const Point &point);
-    Fixed getX() const;
-    Fixed getY() const;
+    float getX() const;
+    float getY() const;
     
 private:
     Fixed x;

@@ -6,7 +6,7 @@
 /*   By: ymomen <ymomen@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/24 07:16:04 by ymomen            #+#    #+#             */
-/*   Updated: 2024/09/24 07:50:56 by ymomen           ###   ########.fr       */
+/*   Updated: 2024/09/24 21:01:31 by ymomen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,12 +33,12 @@ Point &Point::operator=(const Point &point)
     return *this;
 }
 
-Fixed Point::getX() const
+float Point::getX() const
 {
-    return x;
+    return x.toFloat();
 }
 
-Fixed Point::getY() const
+float Point::getY() const
 {
-    return y;
+    return y.toFloat();
 }

@@ -6,7 +6,7 @@
 /*   By: ymomen <ymomen@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/01 11:47:11 by ymomen            #+#    #+#             */
-/*   Updated: 2024/10/03 14:28:05 by ymomen           ###   ########.fr       */
+/*   Updated: 2024/10/03 16:31:08 by ymomen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 #include "ClapTrap.hpp"
 
 //derived class from ClapTrap base class
-class ScavTrap : public ClapTrap
+class ScavTrap : virtual public ClapTrap
 {
     public:
         ScavTrap();
@@ -25,4 +25,5 @@ class ScavTrap : public ClapTrap
         ~ScavTrap();
         void guardGate();
         void attack(const std::string &target);
+
 };

@@ -6,7 +6,7 @@
 /*   By: ymomen <ymomen@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/04 15:49:54 by ymomen            #+#    #+#             */
-/*   Updated: 2024/10/05 18:50:09 by ymomen           ###   ########.fr       */
+/*   Updated: 2024/10/05 19:27:08 by ymomen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,11 +52,13 @@ Dog &Dog::operator=(const Dog &d)
 void Dog::makeSound()const
 {
     std::cout << "\033[34mWouf Wouf" << std::endl;
-    std::cout << "\033[34mI have ideas: " << brain->getIdeas()[0] <<", "+brain->getIdeas()[1] << ", "+brain->getIdeas()[2]<<"\033[0m"<<std::endl;
+    if (brain)
+        std::cout << "\033[34mI have ideas: " << brain->getIdeas()[0] <<", "+brain->getIdeas()[1] << ", "+brain->getIdeas()[2]<<"\033[0m"<<std::endl;
 }
 
 void Dog::setBrainIdeas()
 {
     std::string ideas[100] = {"I am a dog", "I am a good friend", "I love my owner"};
-    brain->setIdeas(ideas);
+    if (brain)
+        brain->setIdeas(ideas);
 }

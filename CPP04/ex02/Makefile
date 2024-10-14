@@ -6,11 +6,11 @@
 #    By: ymomen <ymomen@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/10/04 16:00:30 by ymomen            #+#    #+#              #
-#    Updated: 2024/10/05 19:52:54 by ymomen           ###   ########.fr        #
+#    Updated: 2024/10/05 20:20:43 by ymomen           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = ex01
+NAME = ex02
 CC = c++
 FLAGS = -Wall -Wextra -Werror -std=c++98
 SRCS = main.cpp Animal.cpp Dog.cpp Cat.cpp WrongAnimal.cpp WrongCat.cpp Brain.cpp

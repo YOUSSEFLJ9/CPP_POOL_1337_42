@@ -6,7 +6,7 @@
 /*   By: ymomen <ymomen@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/04 15:49:24 by ymomen            #+#    #+#             */
-/*   Updated: 2024/10/04 15:49:41 by ymomen           ###   ########.fr       */
+/*   Updated: 2024/10/05 14:19:27 by ymomen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,5 +21,5 @@ class Dog: public Animal
         Dog(const Dog &d);
         Dog &operator=(const Dog &d);
         ~Dog();
-        void makeSound() const;
+        void makeSound()const;
 };

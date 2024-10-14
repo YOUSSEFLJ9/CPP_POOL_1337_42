@@ -6,7 +6,7 @@
 /*   By: ymomen <ymomen@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/03 19:44:35 by ymomen            #+#    #+#             */
-/*   Updated: 2024/10/05 14:28:17 by ymomen           ###   ########.fr       */
+/*   Updated: 2024/10/05 20:09:24 by ymomen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,5 +24,5 @@ class Animal
         Animal &operator=(const Animal &a);
         virtual ~Animal();
         const std::string &getType() const;
-        virtual void makeSound() const;
+        virtual void makeSound() const= 0;
 };

@@ -6,7 +6,7 @@
 /*   By: ymomen <ymomen@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/04 16:19:22 by ymomen            #+#    #+#             */
-/*   Updated: 2024/10/04 16:20:16 by ymomen           ###   ########.fr       */
+/*   Updated: 2024/10/05 19:30:57 by ymomen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ WrongCat::WrongCat(): WrongAnimal("WrongCat")
     std::cout << "WrongCat default constructor called" << std::endl;
 }
 
-WrongCat::WrongCat(const WrongCat &c)
+WrongCat::WrongCat(const WrongCat &c): WrongAnimal(c)
 {
     *this = c;
     std::cout << "WrongCat copy constructor called" << std::endl;

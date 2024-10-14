@@ -6,7 +6,7 @@
 /*   By: ymomen <ymomen@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/05 20:28:32 by ymomen            #+#    #+#             */
-/*   Updated: 2024/10/06 21:57:58 by ymomen           ###   ########.fr       */
+/*   Updated: 2024/10/14 18:19:09 by ymomen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ class AMateria
 {
     protected:
         std::string _type;
-        // unsigned int _xp;
+        bool available;
     public:
         AMateria();
         virtual ~AMateria();
@@ -30,6 +30,6 @@ class AMateria
         void setType(std::string const & type);
         virtual AMateria* clone() const = 0;
         virtual void use(ICharacter& target);
-
-        // unsigned int getXP() const;
+        bool isAvailable() const;
+        void setAvailable(bool available);
 };

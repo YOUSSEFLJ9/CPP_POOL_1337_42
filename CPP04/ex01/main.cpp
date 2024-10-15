@@ -6,14 +6,18 @@
 /*   By: ymomen <ymomen@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/04 15:55:49 by ymomen            #+#    #+#             */
-/*   Updated: 2024/10/05 19:58:23 by ymomen           ###   ########.fr       */
+/*   Updated: 2024/10/15 19:08:46 by ymomen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Dog.hpp"
 #include "Cat.hpp"
-#include "WrongCat.hpp"
 
+//     void ff()
+// {
+//     system("leaks ex01");
+// }
+//     atexit(ff);
 int main()
 {
 

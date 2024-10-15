@@ -6,7 +6,7 @@
 /*   By: ymomen <ymomen@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/05 20:53:28 by ymomen            #+#    #+#             */
-/*   Updated: 2024/10/15 19:00:37 by ymomen           ###   ########.fr       */
+/*   Updated: 2024/10/15 19:05:34 by ymomen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,9 @@
 // {
 //     system("leaks ex03");
 // }
+    // atexit(ff);
 int main()
 {
-    // atexit(ff);
     IMateriaSource* src = new MateriaSource();
     std::cout <<"-------------------" << std::endl;
     src->learnMateria(new Ice());

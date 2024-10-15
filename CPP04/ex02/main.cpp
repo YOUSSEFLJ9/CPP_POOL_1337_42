@@ -6,14 +6,18 @@
 /*   By: ymomen <ymomen@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/04 15:55:49 by ymomen            #+#    #+#             */
-/*   Updated: 2024/10/05 20:11:29 by ymomen           ###   ########.fr       */
+/*   Updated: 2024/10/15 19:06:58 by ymomen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Dog.hpp"
 #include "Cat.hpp"
-#include "WrongCat.hpp"
 
+// void ff()
+// {
+//     system("leaks ex02");
+// }
+//     atexit(ff);
 int main()
 {
 
@@ -29,7 +33,7 @@ int main()
     cat->makeSound(); //will output the cat sound!
     dog->makeSound();
     std::cout <<"-------------------"<< std::endl;
-    delete cat;//should not create a leak
+    delete cat;
     delete dog;
     std::cout <<"-------------------"<< std::endl;
     Animal *tab[4];

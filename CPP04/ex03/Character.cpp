@@ -6,7 +6,7 @@
 /*   By: ymomen <ymomen@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/06 21:51:03 by ymomen            #+#    #+#             */
-/*   Updated: 2024/10/15 18:01:51 by ymomen           ###   ########.fr       */
+/*   Updated: 2024/10/15 21:14:01 by ymomen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,7 +77,6 @@ void Character::unequip(int idx)
         return;
     }
     _materias[idx]->setAvailable(false);
-    _materiasCount--;
 
 }
 void Character::use(int idx, ICharacter& target)

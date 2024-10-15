@@ -6,7 +6,7 @@
 /*   By: ymomen <ymomen@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/05 22:15:47 by ymomen            #+#    #+#             */
-/*   Updated: 2024/10/06 22:02:42 by ymomen           ###   ########.fr       */
+/*   Updated: 2024/10/15 18:17:27 by ymomen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ Cure::Cure(Cure const & rhs)
 
 Cure & Cure::operator=(Cure const & rhs)
 {
-    std::cout << "\033[32mCure operator=\033[0m" << std::endl;
+    std::cout << "\033[32mCure operator assignation\033[0m" << std::endl;
     if (this != &rhs)
     {
        AMateria::operator=(rhs);
@@ -44,13 +44,13 @@ Cure & Cure::operator=(Cure const & rhs)
 
 AMateria* Cure::clone() const
 {
-    AMateria *cloneAMT = new(std::nothrow) Cure(*this);
-    if (!cloneAMT)
+    AMateria *clone = new(std::nothrow) Cure(*this);
+    if (!clone)
     {
         std::cout << "Memory allocation failed" << std::endl;
         return NULL;
     }
-    return cloneAMT;
+    return clone;
 }
 
 void Cure::use(ICharacter& target)

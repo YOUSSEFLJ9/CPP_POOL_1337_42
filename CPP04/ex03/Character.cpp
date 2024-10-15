@@ -6,7 +6,7 @@
 /*   By: ymomen <ymomen@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/06 21:51:03 by ymomen            #+#    #+#             */
-/*   Updated: 2024/10/14 17:47:51 by ymomen           ###   ########.fr       */
+/*   Updated: 2024/10/15 18:01:51 by ymomen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,15 @@
 
 Character::Character() : _name("default"), _materiasCount(0)
 {
+    std::cout << "\033[31mCharacter default constructor\033[0m" << std::endl;
     for (int i = 0; i < 4; i++)
         _materias[i] = NULL;
-    std::cout << "\033[31mCharacter default constructor\033[0m" << std::endl;
 }
 Character::Character(std::string const &name) : _name(name), _materiasCount(0)
 {
+    std::cout << "\033[31mCharacter parameter constructor\033[0m" << std::endl;
     for (int i = 0; i < 4; i++)
         _materias[i] = NULL;
-    std::cout << "\033[31mCharacter parameter constructor\033[0m" << std::endl;
 }
 Character::Character(Character const &crt)
 {

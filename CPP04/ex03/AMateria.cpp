@@ -6,7 +6,7 @@
 /*   By: ymomen <ymomen@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/06 17:00:16 by ymomen            #+#    #+#             */
-/*   Updated: 2024/10/14 18:21:24 by ymomen           ###   ########.fr       */
+/*   Updated: 2024/10/15 16:24:10 by ymomen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ AMateria::AMateria(AMateria const & rhs)
 
 AMateria & AMateria::operator=(AMateria const & Amt)
 {
-    std::cout << "\033[34mAMateria operator=\033[0m" << std::endl;
+    std::cout << "\033[34mAMateria operator assignation\033[0m" << std::endl;
     if (this != &Amt)
     {
          _type = Amt._type;

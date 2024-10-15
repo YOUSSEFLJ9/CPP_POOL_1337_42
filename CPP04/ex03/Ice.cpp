@@ -6,7 +6,7 @@
 /*   By: ymomen <ymomen@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/06 18:15:46 by ymomen            #+#    #+#             */
-/*   Updated: 2024/10/06 22:04:49 by ymomen           ###   ########.fr       */
+/*   Updated: 2024/10/15 18:44:16 by ymomen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ Ice::Ice(Ice const & rhs)
 
 Ice & Ice::operator=(Ice const & rhs)
 {
-    std::cout << "\033[31mIce operator=\033[0m" << std::endl;
+    std::cout << "\033[31mIce operator assignation\033[0m" << std::endl;
     if (this != &rhs)
     {
         AMateria::operator=(rhs);

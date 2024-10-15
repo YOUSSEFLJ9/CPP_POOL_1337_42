@@ -6,7 +6,7 @@
 #    By: ymomen <ymomen@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/10/05 20:27:10 by ymomen            #+#    #+#              #
-#    Updated: 2024/10/05 20:28:22 by ymomen           ###   ########.fr        #
+#    Updated: 2024/10/15 18:53:48 by ymomen           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,7 +22,7 @@ all: $(NAME)
 $(NAME): $(OBJS)
 	$(CC) $(FLAGS) $(OBJS) -o $(NAME)
 
-%.o: %.cpp
+%.o: %.cpp Ice.hpp Cure.hpp AMateria.hpp Character.hpp MateriaSource.hpp ICharacter.hpp IMateriaSource.hpp
 	$(CC) $(FLAGS) -c $< -o $@
 
 clean:

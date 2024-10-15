@@ -6,13 +6,15 @@
 /*   By: ymomen <ymomen@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/05 20:28:32 by ymomen            #+#    #+#             */
-/*   Updated: 2024/10/14 18:19:09 by ymomen           ###   ########.fr       */
+/*   Updated: 2024/10/15 18:51:22 by ymomen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 #include <iostream>
 #include "ICharacter.hpp"
+
+class ICharacter;
 
 class AMateria
 {

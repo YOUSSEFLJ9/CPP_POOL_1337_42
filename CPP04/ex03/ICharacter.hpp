@@ -6,14 +6,14 @@
 /*   By: ymomen <ymomen@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/05 20:50:43 by ymomen            #+#    #+#             */
-/*   Updated: 2024/10/14 18:10:39 by ymomen           ###   ########.fr       */
+/*   Updated: 2024/10/15 16:12:14 by ymomen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
 #include "AMateria.hpp"
-
+class AMateria;
 
 class ICharacter
 {

@@ -6,14 +6,14 @@
 #    By: ymomen <ymomen@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/10/16 11:26:20 by ymomen            #+#    #+#              #
-#    Updated: 2024/10/18 20:56:16 by ymomen           ###   ########.fr        #
+#    Updated: 2024/10/22 22:51:56 by ymomen           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = ex05
 SRCS = main.cpp Bureaucrat.cpp
 OBJS = $(SRCS:.cpp=.o)
-FLAGS = -Wall -Wextra -Werorr -std=c++98
+FLAGS = -Wall -Wextra -Werror -std=c++98
 CC = c++
 RM = rm -f
 
@@ -29,7 +29,7 @@ clean:
 	$(RM) $(OBJS)
 
 fclean : clean 
-	$(RM) $(OBJS)
+	$(RM) $(NAME)
 re : fclean all
 
 .PHONY : clean

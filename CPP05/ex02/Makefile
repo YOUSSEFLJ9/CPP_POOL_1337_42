@@ -6,12 +6,12 @@
 #    By: ymomen <ymomen@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/10/16 11:26:20 by ymomen            #+#    #+#              #
-#    Updated: 2024/10/22 23:34:10 by ymomen           ###   ########.fr        #
+#    Updated: 2024/11/15 15:33:18 by ymomen           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = ex00
-SRCS = main.cpp Bureaucrat.cpp
+NAME = ex01
+SRCS = main.cpp Bureaucrat.cpp AForm.cpp ShrubberyCreationForm.cpp RobotomyRequestForm.cpp PresidentialPardonForm.cpp
 OBJS = $(SRCS:.cpp=.o)
 FLAGS = -Wall -Wextra -Werror -std=c++98
 CC = c++
@@ -22,7 +22,7 @@ all : $(NAME)
 $(NAME): $(OBJS)
 	$(CC) $(FLAGS) $(OBJS) -o $(NAME)
 
-%.o : %.cpp  Bureaucrat.hpp
+%.o : %.cpp  Bureaucrat.hpp AForm.hpp ShrubberyCreationForm.hpp RobotomyRequestForm.hpp PresidentialPardonForm.hpp
 	$(CC) $(FLAGS) -c $< -o $@
 
 clean:

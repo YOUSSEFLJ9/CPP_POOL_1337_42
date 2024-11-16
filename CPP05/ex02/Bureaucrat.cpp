@@ -6,12 +6,12 @@
 /*   By: ymomen <ymomen@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/16 11:44:08 by ymomen            #+#    #+#             */
-/*   Updated: 2024/11/15 11:05:49 by ymomen           ###   ########.fr       */
+/*   Updated: 2024/11/15 11:12:27 by ymomen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
-#include "Form.hpp"
+#include "AForm.hpp"
 
 Bureaucrat::Bureaucrat(): name("Default")
 {
@@ -91,7 +91,7 @@ const char *Bureaucrat::GradeTooLowException::what()const throw()
 }
 
 
-void Bureaucrat::signForm(Form &Frm)
+void Bureaucrat::signForm(AForm &Frm)
 {
     try 
     {

@@ -6,7 +6,7 @@
 /*   By: ymomen <ymomen@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/16 11:44:05 by ymomen            #+#    #+#             */
-/*   Updated: 2024/11/09 10:33:27 by ymomen           ###   ########.fr       */
+/*   Updated: 2024/11/15 11:08:51 by ymomen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int main()
       Bureaucrat f("henry", 3);
       Bureaucrat f1("henry", 100);
       Bureaucrat mid;
-      mid = f;
+      mid = f1;
       f.incrementGrade();
       f.incrementGrade();
       std::cout << f<<std:: endl;
@@ -27,8 +27,8 @@ int main()
          Form attestation;
         Form att("mook", 2, 1); 
         att = attestation;
-        att.beSigned(f);
-        attestation.beSigned(f1);
+        f.signForm(att);
+        mid.signForm(attestation);
     }
     catch  (std::exception &e)
     {

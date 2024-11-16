@@ -6,12 +6,20 @@
 /*   By: ymomen <ymomen@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/16 11:44:10 by ymomen            #+#    #+#             */
-/*   Updated: 2024/11/13 11:39:29 by ymomen           ###   ########.fr       */
+/*   Updated: 2024/11/15 11:12:44 by ymomen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 #include <iostream>
+
+#define RED "\033[31m"
+#define GREEN "\033[32m"
+#define YALLOW "\033[33m"
+#define  REST "\033[0m" 
+
+
+class AForm;
 
 class Bureaucrat
 {
@@ -29,6 +37,8 @@ class Bureaucrat
     ~Bureaucrat();
     const int &getGrade()const;
     const std::string &getName()const;
+
+    void signForm(AForm &frm) ;
     
     class GradeTooHighException : public  std::exception
     {
@@ -41,5 +51,4 @@ class Bureaucrat
     };
 
 };
-
 std::ostream &operator<<(std::ostream &out, const Bureaucrat &BRT);

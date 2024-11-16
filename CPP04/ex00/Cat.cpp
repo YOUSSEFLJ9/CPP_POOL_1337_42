@@ -6,7 +6,7 @@
 /*   By: ymomen <ymomen@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/04 10:11:34 by ymomen            #+#    #+#             */
-/*   Updated: 2024/10/04 16:04:14 by ymomen           ###   ########.fr       */
+/*   Updated: 2024/11/15 21:32:12 by ymomen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,4 +36,4 @@ Cat &Cat::operator=(const Cat &c)
 void Cat::makeSound()const
 {
     std::cout << "Miaou Miaou" << std::endl;
-}
+} 

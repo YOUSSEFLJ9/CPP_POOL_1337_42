@@ -6,13 +6,13 @@
 /*   By: ymomen <ymomen@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/23 16:43:18 by ymomen            #+#    #+#             */
-/*   Updated: 2024/11/22 16:12:41 by ymomen           ###   ########.fr       */
+/*   Updated: 2024/11/22 21:40:25 by ymomen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "AForm.hpp"
 
-AForm :: AForm(): name("default"), sign(false), rq_grade_sign(75), rq_grade_exc(75)
+AForm :: AForm(): name("AForm"), sign(false), rq_grade_sign(75), rq_grade_exc(75)
 {
     std::cout <<BLUE "default constructor AForm called" REST<<std::endl;
 }

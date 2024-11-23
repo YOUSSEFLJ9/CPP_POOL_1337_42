@@ -23,6 +23,7 @@
 #define YELLOW "\033[33m"
 #define BLUE "\033[34m"
 #define MAGENTA "\033[35m"
+#define CYAN    "\033[1;36m"
 #define RESETCOLOR "\033[0m"
 
 class AForm

@@ -6,7 +6,7 @@
 /*   By: ymomen <ymomen@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/16 11:44:08 by ymomen            #+#    #+#             */
-/*   Updated: 2024/11/22 15:18:05 by ymomen           ###   ########.fr       */
+/*   Updated: 2024/11/22 19:56:14 by ymomen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,9 +38,9 @@ Bureaucrat::~Bureaucrat()
     std::cout <<RED "Bureaucrat destructor is called" REST<< std::endl;
     
 }
-Bureaucrat &Bureaucrat::operator=(Bureaucrat &BRT)
+Bureaucrat &Bureaucrat::operator=(const Bureaucrat &BRT)
 {
-    std::cout <<RED "operator overloading Assignment is called" REST<< std::endl;
+    std::cout <<RED "Bureaucrat operator overloading Assignment is called" REST<< std::endl;
     if (this != &BRT)
     {
         this->grade = BRT.grade;

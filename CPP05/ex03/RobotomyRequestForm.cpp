@@ -6,7 +6,7 @@
 /*   By: ymomen <ymomen@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/20 15:10:40 by ymomen            #+#    #+#             */
-/*   Updated: 2024/11/22 16:19:05 by ymomen           ###   ########.fr       */
+/*   Updated: 2024/11/23 18:35:13 by ymomen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,13 +23,13 @@ RobotomyRequestForm::RobotomyRequestForm(const std::string &target):AForm(target
     std::cout <<GREEN<< "parameterized of RobotomyRequestForm called"<<REST<<std::endl;
 }
 
-RobotomyRequestForm::RobotomyRequestForm(RobotomyRequestForm &SCF):AForm(SCF)
+RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm &SCF):AForm(SCF)
 {
     this->target = SCF.target;
     std::cout <<GREEN<< "copy constructor of RobotomyRequestForm called"<<REST<<std::endl;
 }
 
-RobotomyRequestForm &RobotomyRequestForm::operator=(RobotomyRequestForm &SCF)
+RobotomyRequestForm &RobotomyRequestForm::operator=(const RobotomyRequestForm &SCF)
 {
     std::cout <<GREEN<< "operator overloading assignment of RobotomyRequestForm called"<<REST<<std::endl;
     if (&SCF  != this)

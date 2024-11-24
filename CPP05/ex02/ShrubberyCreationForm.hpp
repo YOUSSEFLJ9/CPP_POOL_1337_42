@@ -6,7 +6,7 @@
 /*   By: ymomen <ymomen@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/13 12:18:34 by ymomen            #+#    #+#             */
-/*   Updated: 2024/11/22 14:36:42 by ymomen           ###   ########.fr       */
+/*   Updated: 2024/11/23 18:33:18 by ymomen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,8 @@ class ShrubberyCreationForm : public AForm
     public:
         ShrubberyCreationForm();
         ShrubberyCreationForm(const std::string &target);
-        ShrubberyCreationForm(ShrubberyCreationForm &SCF);
-        ShrubberyCreationForm &operator=(ShrubberyCreationForm &SCF);
+        ShrubberyCreationForm(const ShrubberyCreationForm &SCF);
+        ShrubberyCreationForm &operator=(const ShrubberyCreationForm &SCF);
         ~ShrubberyCreationForm();
 
         void executeFromAction()const;

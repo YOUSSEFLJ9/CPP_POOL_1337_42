@@ -6,7 +6,7 @@
 /*   By: ymomen <ymomen@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/22 17:43:26 by ymomen            #+#    #+#             */
-/*   Updated: 2024/11/22 23:50:04 by ymomen           ###   ########.fr       */
+/*   Updated: 2024/11/24 11:52:19 by ymomen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ class Intern
     public:
         Intern();
         ~Intern();
-        Intern(Intern &intn);
+        Intern(const Intern &intn);
         Intern &operator=(const Intern& intrn);
         AForm *makeForm(const std::string &name,const std::string& target);
         class NotNameFormException: public std::exception

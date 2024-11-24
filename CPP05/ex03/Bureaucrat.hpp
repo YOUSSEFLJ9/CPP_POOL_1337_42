@@ -6,7 +6,7 @@
 /*   By: ymomen <ymomen@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/16 11:44:10 by ymomen            #+#    #+#             */
-/*   Updated: 2024/11/22 19:39:01 by ymomen           ###   ########.fr       */
+/*   Updated: 2024/11/24 11:58:24 by ymomen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ class Bureaucrat
 
     public:
     Bureaucrat();
-    Bureaucrat(Bureaucrat &brt);
+    Bureaucrat(const Bureaucrat &brt);
     Bureaucrat(const std::string &name, int grade);
     Bureaucrat &operator=(const Bureaucrat &brt);
     void incrementGrade(void);

@@ -6,7 +6,7 @@
 /*   By: ymomen <ymomen@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/16 11:44:08 by ymomen            #+#    #+#             */
-/*   Updated: 2024/10/22 22:50:49 by ymomen           ###   ########.fr       */
+/*   Updated: 2024/11/24 12:05:22 by ymomen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ Bureaucrat::~Bureaucrat()
     std::cout <<"Bureaucrat destructor is called"<< std::endl;
     
 }
-Bureaucrat &Bureaucrat::operator=(Bureaucrat &BRT)
+Bureaucrat &Bureaucrat::operator=(const Bureaucrat &BRT)
 {
     std::cout <<"operator overloading Assignment is called" << std::endl;
     if (this != &BRT)
@@ -64,7 +64,7 @@ void Bureaucrat::decrementGrade()
 {
     this->grade++;
     if (this->grade > 150)
-        throw Bureaucrat::GradeTooHighException();
+        throw Bureaucrat::GradeTooLowException();
 }
 
 const int &Bureaucrat::getGrade()const

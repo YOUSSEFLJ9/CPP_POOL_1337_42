@@ -6,7 +6,7 @@
 /*   By: ymomen <ymomen@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/16 11:44:08 by ymomen            #+#    #+#             */
-/*   Updated: 2024/11/22 19:56:14 by ymomen           ###   ########.fr       */
+/*   Updated: 2024/11/24 12:06:26 by ymomen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ Bureaucrat::Bureaucrat(): name("Default")
     std::cout << RED "Bureaucrat Default constructor is called" REST<< std::endl;
     grade = 50;
 }
-Bureaucrat::Bureaucrat( Bureaucrat &BRT)
+Bureaucrat::Bureaucrat(const Bureaucrat &BRT)
 {
     std::cout <<RED"Bureaucrat copy constructor is called" REST<< std::endl;
     *this = BRT;
@@ -65,7 +65,7 @@ void Bureaucrat::decrementGrade()
 {
     this->grade++;
     if (this->grade > 150)
-        throw Bureaucrat::GradeTooHighException();
+        throw Bureaucrat::GradeTooLowException();
 }
 
 const int &Bureaucrat::getGrade()const

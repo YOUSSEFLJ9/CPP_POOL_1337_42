@@ -6,7 +6,7 @@
 /*   By: ymomen <ymomen@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/22 19:47:22 by ymomen            #+#    #+#             */
-/*   Updated: 2024/11/22 23:53:19 by ymomen           ###   ########.fr       */
+/*   Updated: 2024/11/24 11:52:22 by ymomen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ Intern::Intern()
 }
 
 
-Intern::Intern(Intern &intrn)
+Intern::Intern(const Intern &intrn)
 {
  std::cout <<CYAN"intern copy constructor is called" RESETCOLOR<< std::endl;
     *this = intrn;   

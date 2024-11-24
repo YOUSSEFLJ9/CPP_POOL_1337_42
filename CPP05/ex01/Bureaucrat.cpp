@@ -6,14 +6,14 @@
 /*   By: ymomen <ymomen@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/16 11:44:08 by ymomen            #+#    #+#             */
-/*   Updated: 2024/11/15 11:05:49 by ymomen           ###   ########.fr       */
+/*   Updated: 2024/11/24 12:05:03 by ymomen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
 #include "Form.hpp"
 
-Bureaucrat::Bureaucrat(): name("Default")
+Bureaucrat::Bureaucrat(): name("Default_Bureaucrat")
 {
     std::cout << RED "Bureaucrat Default constructor is called" REST<< std::endl;
     grade = 50;
@@ -38,9 +38,9 @@ Bureaucrat::~Bureaucrat()
     std::cout <<RED "Bureaucrat destructor is called" REST<< std::endl;
     
 }
-Bureaucrat &Bureaucrat::operator=(Bureaucrat &BRT)
+Bureaucrat &Bureaucrat::operator=(const Bureaucrat &BRT)
 {
-    std::cout <<RED "operator overloading Assignment is called" REST<< std::endl;
+    std::cout <<RED "Bureaucrat operator overloading Assignment is called" REST<< std::endl;
     if (this != &BRT)
     {
         this->grade = BRT.grade;
@@ -65,7 +65,7 @@ void Bureaucrat::decrementGrade()
 {
     this->grade++;
     if (this->grade > 150)
-        throw Bureaucrat::GradeTooHighException();
+        throw Bureaucrat::GradeTooLowException();
 }
 
 const int &Bureaucrat::getGrade()const
@@ -101,3 +101,4 @@ void Bureaucrat::signForm(Form &Frm)
         std:: cout << name << " couldn’t sign " << Frm.getName()<< " beacause "<< e.what() << std::endl;
     }
 }
+

@@ -6,7 +6,7 @@
 /*   By: ymomen <ymomen@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/16 11:44:05 by ymomen            #+#    #+#             */
-/*   Updated: 2024/11/23 15:23:36 by ymomen           ###   ########.fr       */
+/*   Updated: 2024/11/24 11:57:57 by ymomen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,11 +23,11 @@ int main()
 		AForm *dossier2;
 		dossier1 = intern.makeForm("Presidential", "kingForm");
 		dossier2 = intern.makeForm("Shrubbery", "alber");
+		std::cout << Luis<< std::endl;
 		std::cout <<"_________________________________\n";
 		try
 		{
 			Luis.signForm(*dossier1);
-
 		}
 		catch(const std::exception& e)
 		{
@@ -49,7 +49,6 @@ int main()
     {
         std::cerr << e.what() << '\n';
     }
-    
     return (0);
     
 }

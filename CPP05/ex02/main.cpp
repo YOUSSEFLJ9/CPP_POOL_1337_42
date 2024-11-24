@@ -6,7 +6,7 @@
 /*   By: ymomen <ymomen@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/16 11:44:05 by ymomen            #+#    #+#             */
-/*   Updated: 2024/11/22 16:12:19 by ymomen           ###   ########.fr       */
+/*   Updated: 2024/11/23 18:03:18 by ymomen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,10 +30,17 @@ int main()
         std:: cout << e.what()<< std::endl;
     }
     std::cout <<"---------------------------\n";
-    PresidentialPardonForm A;
-    Bureaucrat Ahmed("ahmed", 5);
-    Ahmed.signForm(A);
-    Ahmed.executeFrom(A);
+    try
+    {
+        PresidentialPardonForm A;
+        Bureaucrat Ahmed("ahmed", 5);
+        Ahmed.signForm(A);
+        Ahmed.executeFrom(A);
+    }
+    catch(const std::exception& e)
+    {
+        std::cerr << e.what() << '\n';
+    }
     std::cout <<"---------------------------\n";
     try
     {

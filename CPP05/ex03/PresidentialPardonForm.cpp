@@ -6,7 +6,7 @@
 /*   By: ymomen <ymomen@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/22 14:26:54 by ymomen            #+#    #+#             */
-/*   Updated: 2024/11/22 16:18:58 by ymomen           ###   ########.fr       */
+/*   Updated: 2024/11/23 18:34:51 by ymomen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,13 +22,13 @@ PresidentialPardonForm::PresidentialPardonForm(const std::string &target):AForm(
     std::cout <<YALLOW<< "parmconstructor of PresidentialPardonForm called"<<REST<<std::endl;
 }
 
-PresidentialPardonForm::PresidentialPardonForm(PresidentialPardonForm &SCF):AForm(SCF)
+PresidentialPardonForm::PresidentialPardonForm(const PresidentialPardonForm &SCF):AForm(SCF)
 {
     this->target = SCF.target;
     std::cout <<YALLOW<< "copy constructor of PresidentialPardonForm called"<<REST<<std::endl;
 }
 
-PresidentialPardonForm &PresidentialPardonForm::operator=(PresidentialPardonForm &SCF)
+PresidentialPardonForm &PresidentialPardonForm::operator=(const PresidentialPardonForm &SCF)
 {
     std::cout <<YALLOW<< "operator overloading assignment of PresidentialPardonForm called"<<REST<<std::endl;
     if (&SCF  != this)

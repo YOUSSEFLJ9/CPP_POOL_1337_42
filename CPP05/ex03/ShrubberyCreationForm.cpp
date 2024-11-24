@@ -6,7 +6,7 @@
 /*   By: ymomen <ymomen@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/15 15:42:20 by ymomen            #+#    #+#             */
-/*   Updated: 2024/11/22 16:18:43 by ymomen           ###   ########.fr       */
+/*   Updated: 2024/11/23 18:35:46 by ymomen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,13 +22,13 @@ ShrubberyCreationForm::ShrubberyCreationForm(const std::string &target):AForm(ta
     std::cout <<MAGENTA << "parmconstructor of ShrubberyCreationForm called "<<REST<<std::endl;
 }
 
-ShrubberyCreationForm::ShrubberyCreationForm(ShrubberyCreationForm &SCF):AForm(SCF)
+ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm &SCF):AForm(SCF)
 {
     this->target = SCF.target;
     std::cout << MAGENTA <<"copy constructor of ShrubberyCreationForm called "<<REST<<std::endl;
 }
 
-ShrubberyCreationForm &ShrubberyCreationForm::operator=(ShrubberyCreationForm &SCF)
+ShrubberyCreationForm &ShrubberyCreationForm::operator=(const ShrubberyCreationForm &SCF)
 {
     std::cout << MAGENTA <<"operator overloading assignment of ShrubberyCreationForm called "<<REST<<std::endl;
     if (&SCF  != this)

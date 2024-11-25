@@ -6,7 +6,7 @@
 /*   By: ymomen <ymomen@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/23 16:43:18 by ymomen            #+#    #+#             */
-/*   Updated: 2024/11/24 12:01:45 by ymomen           ###   ########.fr       */
+/*   Updated: 2024/11/25 14:44:35 by ymomen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,6 +93,6 @@ void AForm::AbleToExcute(Bureaucrat const &executor)const
 {
     if (!this->sign)
         throw FormNotSingException;
-    if (executor.getGrade() >= this->getRqGradeExc())
+    if (executor.getGrade() > this->getRqGradeExc())
         throw GradeTooLowException;
 } 

@@ -6,7 +6,7 @@
 /*   By: ymomen <ymomen@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/13 12:18:34 by ymomen            #+#    #+#             */
-/*   Updated: 2024/11/23 18:33:18 by ymomen           ###   ########.fr       */
+/*   Updated: 2024/11/25 14:47:22 by ymomen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,6 @@ class ShrubberyCreationForm : public AForm
         ShrubberyCreationForm &operator=(const ShrubberyCreationForm &SCF);
         ~ShrubberyCreationForm();
 
-        void executeFromAction()const;
         void execute(Bureaucrat const & executor) const;
 
         class FailedOpenFileException: public std::exception
@@ -33,5 +32,6 @@ class ShrubberyCreationForm : public AForm
         }FailedOpenFileException;
     private:
         std::string target;
+        void executeFromAction()const;
 
 };

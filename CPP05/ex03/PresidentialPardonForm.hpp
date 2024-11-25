@@ -6,7 +6,7 @@
 /*   By: ymomen <ymomen@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/13 12:18:26 by ymomen            #+#    #+#             */
-/*   Updated: 2024/11/23 18:34:40 by ymomen           ###   ########.fr       */
+/*   Updated: 2024/11/25 14:48:06 by ymomen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,9 @@ class PresidentialPardonForm : public AForm
         ~PresidentialPardonForm();
 
         void execute(Bureaucrat const & executor) const;
-        void executeFromAction()const;
 
     private:
         std::string target;
+        void executeFromAction()const;
 
 };

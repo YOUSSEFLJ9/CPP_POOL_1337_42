@@ -6,7 +6,7 @@
 /*   By: ymomen <ymomen@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/20 15:10:40 by ymomen            #+#    #+#             */
-/*   Updated: 2024/11/23 18:35:13 by ymomen           ###   ########.fr       */
+/*   Updated: 2024/11/25 14:48:57 by ymomen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,9 +48,9 @@ RobotomyRequestForm::~RobotomyRequestForm()
 void RobotomyRequestForm::executeFromAction()const
 {
     srand((unsigned int)time(NULL));
-    int dif = rand() % 2;
+    int dif = rand() % 2 + 1;
     std::cout << "Makes some drilling noises"<<std::endl;
-    if (dif % 2|| dif == RAND_MAX)
+    if (dif % 2)
         std::cout <<this->target << "has been robotomized successfully 50%% of the time"<<std::endl;
     else
         std::cout <<this->target<< "has been failed" << std:: endl;

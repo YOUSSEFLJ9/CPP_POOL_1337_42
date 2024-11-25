@@ -45,9 +45,6 @@ class AForm
         const bool &getSignedstatus()const;
         const int &getRqGradeSign()const;
         const int &getRqGradeExc()const;
-        //setter
-        void setName(const std::string n);
-        void  checkSign(Bureaucrat const &exceutor)const;
         
         void beSigned(Bureaucrat &Brt);
         void virtual execute(Bureaucrat const & executor) const=0;

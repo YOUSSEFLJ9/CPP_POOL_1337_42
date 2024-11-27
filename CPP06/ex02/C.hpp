@@ -1,23 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   C.hpp                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ymomen <ymomen@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/24 17:19:42 by ymomen            #+#    #+#             */
-/*   Updated: 2024/11/27 19:07:46 by ymomen           ###   ########.fr       */
+/*   Created: 2024/11/27 12:32:12 by ymomen            #+#    #+#             */
+/*   Updated: 2024/11/27 12:39:23 by ymomen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScalarConverter.hpp"
+#ifndef C_HPP
+# define C_HPP
+# include "Base.hpp"
 
+class C : public Base
+{
+};
 
-int main(int ac,char **av)
-{   
-    if(ac != 2)
-        std::cout <<"Usage : ./convert [value]"<<std::endl;
-    else
-        ScalarConverter::convert(av[1]);
-    return 0;
-}
+#endif

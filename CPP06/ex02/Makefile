@@ -5,13 +5,13 @@
 #                                                     +:+ +:+         +:+      #
 #    By: ymomen <ymomen@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2024/10/16 11:26:20 by ymomen            #+#    #+#              #
-#    Updated: 2024/11/26 21:14:37 by ymomen           ###   ########.fr        #
+#    Created: 2024/11/27 12:53:15 by ymomen            #+#    #+#              #
+#    Updated: 2024/11/27 12:55:24 by ymomen           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = convert
-SRCS = main.cpp ScalarConverter.cpp
+NAME = ex02
+SRCS = main.cpp Base.cpp util.cpp
 OBJS = $(SRCS:.cpp=.o)
 FLAGS = -Wall -Wextra -Werror -std=c++98
 CC = c++
@@ -22,7 +22,7 @@ all : $(NAME)
 $(NAME): $(OBJS)
 	$(CC) $(FLAGS) $(OBJS) -o $(NAME)
 
-%.o : %.cpp  ScalarConverter.hpp
+%.o : %.cpp  A.hpp B.hpp C.hpp util.hpp Base.hpp
 	$(CC) $(FLAGS) -c $< -o $@
 
 clean:

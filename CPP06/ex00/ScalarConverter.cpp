@@ -6,7 +6,7 @@
 /*   By: ymomen <ymomen@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/26 08:50:53 by ymomen            #+#    #+#             */
-/*   Updated: 2024/11/27 15:28:09 by ymomen           ###   ########.fr       */
+/*   Updated: 2024/11/28 15:41:03 by ymomen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,17 @@ ScalarConverter &ScalarConverter::operator=(const ScalarConverter& other)
 }
 
 
+int ScalarConverter::Get_Type(const std::string&in)
+{
+    if (!in.compare("nan") || !in.compare("-inf") || !in.compare("+inf"))
+        return 1;
+    else if (!in.compare("+inff") || !in.compare("-inff") || !in.compare("nanf"))
+        return 2;
+    if (in.size() == 1 && isalpha(in[0]) && !isdigit(in[0]))
+        return 20;
+    return 0;
+}
+
 
 void ScalarConverter::convert(const std::string& in)
 {
@@ -47,12 +58,6 @@ void ScalarConverter::convert(const std::string& in)
         std::cout << "float: "<< in <<std::endl;
         std::cout << "double: "<<in.substr(0, in.length() - 1)<<std::endl;
         break;
-    case 3:
-        std::cout << "char: impossible"<<std::endl;
-        std::cout << "int: impossible"<<std::endl;
-        std::cout << "float: impossible" <<std::endl;
-        std::cout << "double: impossible"<<std::endl;
-        break;
     default:
             custom_cases(in);
         break;
@@ -61,25 +66,25 @@ void ScalarConverter::convert(const std::string& in)
 
 void ScalarConverter::custom_cases(const std::string &in)
 {
-    print_char(in);
-    print_int(in);
-    print_float(in);
-    print_double(in);
+    std::string s;
+    s = in;
+    if(in[in.length() - 1] == 'f')
+       s = in.substr(0, in.length() - 1);
+    print_char(s);
+    print_int(s);
+    print_float(s);
+    print_double(s);
 }
 
 void ScalarConverter::print_float(const std::string & in)
 {
     try{
         float floating = 0;
-        if (in.length() == 1 && isalpha(in[0]))
+        if (in.length() == 1 && isascii(in[0]))
             floating = static_cast<float>(in[0]);
         else
         {
-            std::string s;
-            s = in;
-            if(in[in.length() - 1] == 'f')
-                s = in.substr(0, in.length() - 1);
-            std::stringstream strem(s);
+            std::stringstream strem(in);
             strem >> floating;
             if (strem.fail() || !strem.eof())
                 throw "impossible";
@@ -97,16 +102,12 @@ void ScalarConverter:: print_char(const std::string & in)
 {
     try{
         int c = 0 ;
-        if (in.length() == 1 && isalpha(in[0]))
+        if (in.length() == 1 && isascii(in[0]) && !isdigit(in[0]))
             c = static_cast<int>(in[0]);
         else
         {
-            std::string s;
-            s = in;
             float f = 0;
-            if(in[in.length() - 1] == 'f')
-                s = in.substr(0, in.length() - 1);
-            std::stringstream strem(s);
+            std::stringstream strem(in);
             strem >> f;
             if (strem.fail() || !strem.eof())
                 throw "impossible";
@@ -131,14 +132,16 @@ void ScalarConverter:: print_int(const std::string & in)
 {
     try{
         int integer = 0 ;
-        if (in.length() == 1 && isalpha(in[0]))
+        if (in.length() == 1 && isascii(in[0]))
             integer = static_cast<int>(in[0]);
         else
         {
+            float f = 0;
             std::stringstream ss(in);
-            ss >> integer;
-            if (ss.fail())
+            ss >> f;
+            if (ss.fail() || !ss.eof())
                 throw "impossible";
+            integer = static_cast<int>(f);
         }
         std::cout << "int : " << integer << std::endl;
     }
@@ -152,15 +155,11 @@ void ScalarConverter:: print_double(const std::string & in)
 {
     try{
         double d = 0.0;
-        if (in.length() == 1 && isalpha(in[0]))
+        if (in.length() == 1 && isascii(in[0]))
             d = static_cast<double>(in[0]);
         else
         {
-             std::string s;
-            s = in;
-            if(in[in.length() - 1] == 'f')
-                s = in.substr(0, in.length() - 1);
-            std::stringstream strem(s);
+            std::stringstream strem(in);
             strem >> d;
             if (strem.fail() || !strem.eof())
                 throw "impossible";
@@ -172,22 +171,4 @@ void ScalarConverter:: print_double(const std::string & in)
     {
         std::cout << "double : "<< e << std::endl;
     }
-}
-
-int ScalarConverter::Get_Type(const std::string&in)
-{
-    if (!in.compare("nan") || !in.compare("-inf") || !in.compare("+inf"))
-        return 1;
-    else if (!in.compare("+inff") || !in.compare("-inff") || !in.compare("nanf"))
-        return 2;
-    int i = 0;
-    if (in.size() == 1 && isalpha(in[0]) && !isdigit(in[0]))
-        return 20;
-    while(in[i])
-    {
-        if (in[i] != '.' && in[i] != 'f'  && !isdigit(in[i]) && in[i] != '-' )
-            return 3;
-        i++;
-    }
-    return 0;
 }

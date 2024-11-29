@@ -6,7 +6,7 @@
 /*   By: ymomen <ymomen@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/26 08:50:53 by ymomen            #+#    #+#             */
-/*   Updated: 2024/11/29 10:18:41 by ymomen           ###   ########.fr       */
+/*   Updated: 2024/11/29 13:48:13 by ymomen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,7 +97,9 @@ void ScalarConverter::print_float(const std::string & in)
 {
     try{
         float floating = 0;
-        if (in.length() == 1 && isascii(in[0]))
+        if (in.length() == 1 && isdigit(in[0]))
+            floating = static_cast<float>(in[0] - '0');
+        else if (in.length() == 1 && isascii(in[0]))
             floating = static_cast<float>(in[0]);
         else
         {
@@ -164,7 +166,9 @@ void ScalarConverter:: print_int(const std::string & in)
 {
     try{
         int integer = 0 ;
-        if (in.length() == 1 && isascii(in[0]))
+        if (in.length() == 1 && isdigit(in[0]))
+            integer = static_cast<int>(in[0] - '0');
+        else if (in.length() == 1 && isascii(in[0]))
             integer = static_cast<int>(in[0]);
         else
         {
@@ -185,7 +189,9 @@ void ScalarConverter:: print_double(const std::string & in)
 {
     try{
         double d = 0.0;
-        if (in.length() == 1 && isascii(in[0]))
+        if (in.length() == 1 && isdigit(in[0]))
+            d = static_cast<double>(in[0] - '0');
+        else if (in.length() == 1 && isascii(in[0]))
             d = static_cast<double>(in[0]);
         else
         {

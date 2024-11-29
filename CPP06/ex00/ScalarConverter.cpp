@@ -6,7 +6,7 @@
 /*   By: ymomen <ymomen@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/26 08:50:53 by ymomen            #+#    #+#             */
-/*   Updated: 2024/11/28 15:41:03 by ymomen           ###   ########.fr       */
+/*   Updated: 2024/11/29 10:18:41 by ymomen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,17 @@ int ScalarConverter::Get_Type(const std::string&in)
         return 2;
     if (in.size() == 1 && isalpha(in[0]) && !isdigit(in[0]))
         return 20;
+    if (in.size() > 1)
+    {
+        for(size_t i = 0; i < in.size(); i++)
+        {
+            if ((in[i] == '.' && i != in.size() - 1 && isdigit(in[i+1])) || in[i] == 'f')
+                continue;
+            if (!isdigit(in[i]))
+                return 3;
+        }
+        
+    }
     return 0;
 }
 
@@ -58,6 +69,12 @@ void ScalarConverter::convert(const std::string& in)
         std::cout << "float: "<< in <<std::endl;
         std::cout << "double: "<<in.substr(0, in.length() - 1)<<std::endl;
         break;
+    case 3:
+        std::cout << "char: impossible"<<std::endl;
+        std::cout << "int: impossible"<<std::endl;
+        std::cout << "float: impossible"<<std::endl;
+        std::cout << "double: impossible"<<std::endl;
+        break;
     default:
             custom_cases(in);
         break;
@@ -68,7 +85,7 @@ void ScalarConverter::custom_cases(const std::string &in)
 {
     std::string s;
     s = in;
-    if(in[in.length() - 1] == 'f')
+    if(in.size() > 1 && in[in.length() - 1] == 'f')
        s = in.substr(0, in.length() - 1);
     print_char(s);
     print_int(s);
@@ -128,6 +145,21 @@ void ScalarConverter:: print_char(const std::string & in)
     }
 }
 
+int check_int(const std::string &in)
+{
+    int valid = 0;
+    for (size_t i = 0; i < in.size(); i++)
+    {
+        if (in[i] != '.' && !isdigit(in[i]))
+            return 0;
+        if (in[i] == '.')
+            valid += 1;
+    }
+    if (valid > 1)
+        return 0;
+    return 1;
+}
+
 void ScalarConverter:: print_int(const std::string & in)
 {
     try{
@@ -136,12 +168,10 @@ void ScalarConverter:: print_int(const std::string & in)
             integer = static_cast<int>(in[0]);
         else
         {
-            float f = 0;
             std::stringstream ss(in);
-            ss >> f;
-            if (ss.fail() || !ss.eof())
+            ss >> integer;
+            if (ss.fail() || !check_int(in))
                 throw "impossible";
-            integer = static_cast<int>(f);
         }
         std::cout << "int : " << integer << std::endl;
     }

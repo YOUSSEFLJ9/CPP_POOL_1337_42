@@ -6,7 +6,7 @@
 /*   By: ymomen <ymomen@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/29 20:43:04 by ymomen            #+#    #+#             */
-/*   Updated: 2024/11/30 17:16:53 by ymomen           ###   ########.fr       */
+/*   Updated: 2024/12/02 10:10:41 by ymomen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,13 +17,7 @@
 
 
 template <typename T>
-void iter(T arr[], size_t size, void (*func)(T & elem))
-{
-    for (size_t i = 0; i < size; i++)
-        func(arr[i]);
-}
-template <typename T>
-void iter(T arr[], size_t size, void (*func)(const T & elem))
+void iter(T arr[], size_t size, void (*func)(T elem))
 {
     for (size_t i = 0; i < size; i++)
         func(arr[i]);

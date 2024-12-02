@@ -1,34 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   iter.hpp                                           :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ymomen <ymomen@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/29 20:43:04 by ymomen            #+#    #+#             */
-/*   Updated: 2024/12/02 20:14:38 by ymomen           ###   ########.fr       */
+/*   Created: 2024/12/02 10:27:03 by ymomen            #+#    #+#             */
+/*   Updated: 2024/12/02 16:06:36 by ymomen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ITER_HPP
-#define ITER_HPP
-
+#include "easyfind.hpp"
+#include <vector>
 #include <iostream>
 
-
-template <typename T>
-void iter(T arr[], size_t size, void (*func)(T elem))
+int main()
 {
-    if (!arr || !func)
-        throw std::invalid_argument("Null pointer exception");
-    for (size_t i = 0; i < size; i++)
-        func(arr[i]);
-}
 
-template <typename T>
-void print(T elem)
-{
-    std::cout << elem << std::endl;
-}
+    try
+    {
+        std::vector<int> v;
+        for (int i = 0; i < 10; i++)
+            v.push_back(i);
+        std::cout << easyfind(v, 5) << std::endl;
+        std::cout << easyfind(v, 10) << std::endl;
+    }
+    catch(const std::exception& e)
+    {
+        std::cerr << e.what() << '\n';
+    }
+    
+    
 
-#endif // ITER_HPP
+}

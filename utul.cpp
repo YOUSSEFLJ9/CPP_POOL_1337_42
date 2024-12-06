@@ -1,35 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   utul.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ymomen <ymomen@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/02 10:27:03 by ymomen            #+#    #+#             */
-/*   Updated: 2024/12/04 17:30:36 by ymomen           ###   ########.fr       */
+/*   Created: 2024/12/04 17:33:09 by ymomen            #+#    #+#             */
+/*   Updated: 2024/12/04 17:35:18 by ymomen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "easyfind.hpp"
-#include <vector>
-#include <iostream>
 
-int main()
+
+
+template <typename Iter>
+void myPrint(Iter begin, Iter end)
 {
-
-    try
-    {
-        std::vector<int> v;
-        for (int i = 0; i <= 10; i++)
-            v.push_back(i);
-        std::cout << easyfind(v, 5) << std::endl;
-        std::cout << easyfind(v, 10) << std::endl;
-    }
-    catch(const std::exception& e)
-    {
-        std::cerr << e.what() << '\n';
-    }
-    
-    
-
+ for (auto iter { begin }; iter != end; ++iter) { cout << *iter << " "; }
 }
+

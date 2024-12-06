@@ -1,35 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Span.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ymomen <ymomen@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/02 10:27:03 by ymomen            #+#    #+#             */
-/*   Updated: 2024/12/04 17:30:36 by ymomen           ###   ########.fr       */
+/*   Created: 2024/12/06 09:50:57 by ymomen            #+#    #+#             */
+/*   Updated: 2024/12/06 12:06:30 by ymomen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "easyfind.hpp"
-#include <vector>
+#ifndef SPAN_HPP
+#define SPAN_HPP
+
 #include <iostream>
+#include <set>
 
-int main()
+class Span
 {
-
-    try
-    {
-        std::vector<int> v;
-        for (int i = 0; i <= 10; i++)
-            v.push_back(i);
-        std::cout << easyfind(v, 5) << std::endl;
-        std::cout << easyfind(v, 10) << std::endl;
-    }
-    catch(const std::exception& e)
-    {
-        std::cerr << e.what() << '\n';
-    }
+    private:
+        unsigned int _max;
+        std::multiset<int> _set;
+    public:
+        Span();
+        Span(const unsigned int &n);
+        Span(const Span &other);
+        Span &operator=(Span const &other);
+        ~Span();
+        
+        void addNumber(int n);
+        int shortestSpan();
+        int longestSpan();
+        
     
     
+};
 
-}
+#endif // SPAN_HPP

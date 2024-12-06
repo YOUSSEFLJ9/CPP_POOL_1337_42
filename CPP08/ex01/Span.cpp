@@ -1,35 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Span.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ymomen <ymomen@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/02 10:27:03 by ymomen            #+#    #+#             */
-/*   Updated: 2024/12/04 17:30:36 by ymomen           ###   ########.fr       */
+/*   Created: 2024/12/06 11:50:10 by ymomen            #+#    #+#             */
+/*   Updated: 2024/12/06 12:37:00 by ymomen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "easyfind.hpp"
-#include <vector>
-#include <iostream>
+#include "Span.hpp"
 
-int main()
+Span::Span()
 {
+    _max = 1337;
+}
 
-    try
-    {
-        std::vector<int> v;
-        for (int i = 0; i <= 10; i++)
-            v.push_back(i);
-        std::cout << easyfind(v, 5) << std::endl;
-        std::cout << easyfind(v, 10) << std::endl;
-    }
-    catch(const std::exception& e)
-    {
-        std::cerr << e.what() << '\n';
-    }
+Span::Span(const unsigned int &n): _max(n)
+{
     
-    
+};
 
+Span &Span::operator=(const Span &other)
+{
+    if (&other != this)
+    {
+        this->_max = other._max;
+        this->_set = other._set;
+    }
+}
+
+Span::~Span()
+{
+    
 }

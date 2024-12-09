@@ -1,30 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   easyfind.hpp                                       :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ymomen <ymomen@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/02 15:24:52 by ymomen            #+#    #+#             */
-/*   Updated: 2024/12/09 12:46:09 by ymomen           ###   ########.fr       */
+/*   Created: 2024/12/08 16:17:10 by ymomen            #+#    #+#             */
+/*   Updated: 2024/12/08 20:27:57 by ymomen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef EASYFIND_HPP
-#define EASYFIND_HPP
+#include "BitcoinExchange.hpp"
 
-#include <iostream>
-#include <algorithm>
-
-template <typename T>
-int easyfind(T t, int i)
+int main(int ac, char **av)
 {
-    typename T::iterator  it = std::find(std::begin(t), end(t), i);
-    if (it != std::end(t))
-        return *it;
-    else
-        throw std::invalid_argument("not found !");
+    if (ac != 2)
+    {
+        std::cerr << "Usage: ./bitcoin [filename]" << std::endl;
+        return 1;
+    }
+    BitcoinExchange stock;
+    stock.readFile(av[1]);
+
+    return 0;
 }
-
-
-#endif // EASYFIND_HPP

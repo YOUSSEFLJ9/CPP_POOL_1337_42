@@ -6,7 +6,7 @@
 /*   By: ymomen <ymomen@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/06 09:50:57 by ymomen            #+#    #+#             */
-/*   Updated: 2024/12/06 12:06:30 by ymomen           ###   ########.fr       */
+/*   Updated: 2024/12/07 10:23:34 by ymomen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 #define SPAN_HPP
 
 #include <iostream>
+#include <ctime>
+#include <cstdlib>
 #include <set>
 
 class Span
@@ -23,17 +25,17 @@ class Span
         std::multiset<int> _set;
     public:
         Span();
-        Span(const unsigned int &n);
+        Span(const unsigned  int &n);
         Span(const Span &other);
         Span &operator=(Span const &other);
         ~Span();
         
         void addNumber(int n);
-        int shortestSpan();
-        int longestSpan();
-        
-    
-    
+        int shortestSpan() const;
+        int longestSpan()const ;
+        void FillSpan(unsigned int n);
+        unsigned int getSize()const;
+        void cleanSpan();
 };
 
 #endif // SPAN_HPP

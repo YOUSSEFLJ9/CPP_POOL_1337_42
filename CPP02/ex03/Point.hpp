@@ -6,7 +6,7 @@
 /*   By: ymomen <ymomen@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/24 07:14:19 by ymomen            #+#    #+#             */
-/*   Updated: 2024/09/24 21:00:49 by ymomen           ###   ########.fr       */
+/*   Updated: 2024/12/09 14:16:46 by ymomen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,8 @@ public:
     float getY() const;
     
 private:
-    Fixed x;
-    Fixed y;
+    const Fixed x;
+    const Fixed y;
     
 };
 

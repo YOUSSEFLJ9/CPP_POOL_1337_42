@@ -1,30 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   easyfind.hpp                                       :+:      :+:    :+:   */
+/*   BitcoinExchange.cpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ymomen <ymomen@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/02 15:24:52 by ymomen            #+#    #+#             */
-/*   Updated: 2024/12/09 12:46:09 by ymomen           ###   ########.fr       */
+/*   Created: 2024/12/08 16:17:07 by ymomen            #+#    #+#             */
+/*   Updated: 2024/12/09 13:17:39 by ymomen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef EASYFIND_HPP
-#define EASYFIND_HPP
+#include "BitcoinExchange.hpp"
 
-#include <iostream>
-#include <algorithm>
-
-template <typename T>
-int easyfind(T t, int i)
+BitcoinExchange::BitcoinExchange()
 {
-    typename T::iterator  it = std::find(std::begin(t), end(t), i);
-    if (it != std::end(t))
-        return *it;
-    else
-        throw std::invalid_argument("not found !");
 }
 
+void BitcoinExchange::readFile(const std::string &file)
+{
+    std::ifstream fs(file);
+    if (!fs.is_open())
+        throw std::runtime_error("File not found");
 
-#endif // EASYFIND_HPP
+    std::string line;
+    
+}

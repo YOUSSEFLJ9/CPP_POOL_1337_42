@@ -6,7 +6,7 @@
 /*   By: ymomen <ymomen@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/08 16:17:10 by ymomen            #+#    #+#             */
-/*   Updated: 2024/12/08 20:27:57 by ymomen           ###   ########.fr       */
+/*   Updated: 2024/12/21 21:41:50 by ymomen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,18 @@ int main(int ac, char **av)
         std::cerr << "Usage: ./bitcoin [filename]" << std::endl;
         return 1;
     }
-    BitcoinExchange stock;
-    stock.readFile(av[1]);
+    try
+    {
+        BitcoinExchange stock;
+        std::string infile = static_cast<std::string>(av[1]);
+        stock.readFile(infile);
+        
+    }
+    catch(const std::exception& e)
+    {
+        std::cerr << e.what() << '\n';
+    }
+    
 
     return 0;
 }

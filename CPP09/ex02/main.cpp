@@ -6,7 +6,7 @@
 /*   By: ymomen <ymomen@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/24 16:32:08 by ymomen            #+#    #+#             */
-/*   Updated: 2024/12/31 20:08:45 by ymomen           ###   ########.fr       */
+/*   Updated: 2025/01/01 10:01:33 by ymomen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,26 +26,24 @@ int main(int ac, char **av)
         PmergeMe p;
         for (int i = 1; i < ac; i++)
             p.ParseArgs(static_cast<std::string>(av[i]));
-        std::cout <<"Before: ";
+        std::cout <<"Before:  ";
         p.print_v();
-        // std::cout <<"--------------------------------------------\n";
         gettimeofday(&startTv, NULL);
         p.fordJohnsonSort_v();
         gettimeofday(&endTv, NULL);
-        // std::cout <<"--------------------------------------------"<< std::endl;
         gettimeofday(&startTd, NULL);
         p.fordJohnsonSort_d();
         gettimeofday(&endTd, NULL);
-        std::cout << "After: ";    
+        std::cout << "After:  ";    
         p.print_d();
-        std::cout <<"Vector time: "<<(endTv.tv_sec- startTv.tv_sec)+ (endTv.tv_usec- startTv.tv_usec)/1000000.0 << std::endl;
-        std::cout <<"Deque time : "<<(endTd.tv_sec- startTd.tv_sec)+ (endTd.tv_usec- startTd.tv_usec)/1000000.0 << std::endl;
+        std::cout <<"Time to process a range of "<< p.size_vector() << " elements with std::vector "<<(endTv.tv_sec- startTv.tv_sec)* 1000.0 + (endTv.tv_usec- startTv.tv_usec)/1000.0  << " ms" << std::endl;
+        std::cout <<"Time to process a range of "<< p.size_deque() << " elements with std::deque  "<<(endTd.tv_sec- startTd.tv_sec)* 1000.0 + (endTd.tv_usec- startTd.tv_usec)/1000.0 << " ms" << std::endl;
     }
     catch(const std::exception& e)
     {
         std::cerr << e.what() << '\n';
     }
-    
+     
             
         
 }

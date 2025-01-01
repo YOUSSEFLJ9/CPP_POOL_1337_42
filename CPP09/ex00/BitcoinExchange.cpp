@@ -6,7 +6,7 @@
 /*   By: ymomen <ymomen@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/08 16:17:07 by ymomen            #+#    #+#             */
-/*   Updated: 2024/12/23 18:06:01 by ymomen           ###   ########.fr       */
+/*   Updated: 2025/01/01 10:13:18 by ymomen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,10 @@ BitcoinExchange::BitcoinExchange(const BitcoinExchange &other)
 }
 BitcoinExchange::~BitcoinExchange()
 {
+    if (infile.is_open())
+        infile.close();
+    if (db_file.is_open())
+        db_file.close();
     // std::cout << "destructer called\n";
 }
 
@@ -31,7 +35,7 @@ BitcoinExchange &BitcoinExchange::operator=(const BitcoinExchange &other)
     std::cout << "copy assingment called\n";
     if (this != &other)
     {
-
+        this->exchange_db = other.exchange_db;
     }
     return *this;
 }

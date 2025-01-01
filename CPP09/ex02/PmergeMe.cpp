@@ -6,7 +6,7 @@
 /*   By: ymomen <ymomen@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/24 16:32:18 by ymomen            #+#    #+#             */
-/*   Updated: 2024/12/31 18:56:28 by ymomen           ###   ########.fr       */
+/*   Updated: 2025/01/01 10:10:45 by ymomen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,18 +102,6 @@ void PmergeMe::print_d()
     std::cout << std::endl;
 }
 
-std::vector<int> PmergeMe::Jacobsthalsequence(size_t n)
-{
-    std::vector<int> sequence;
-    sequence.push_back(0);
-    sequence.push_back(1);
-    for (size_t i = 2; i < n ; i++)
-    {
-        sequence.push_back(sequence[i -1] + 2 * sequence[i - 2]);
-    }
-    return sequence;
-}
-
 
 void PmergeMe::fill_main_pending_v(std::vector<std::pair<int ,int> > &pairs, std::vector<int>& mainchain,std::vector<int>& pendingchain)
 {
@@ -177,8 +165,6 @@ void PmergeMe::fordJohnsonSort_v()
         }       
     }
     pairs = recursiveBiggersort_v(pairs);
-    
-    // std::sort(pairs.begin(), pairs.end());
     fill_main_pending_v(pairs, mainchain, pendingchain);
     insert_pendingelements_v(mainchain, pendingchain);
     mainchain.clear();
@@ -279,8 +265,6 @@ void PmergeMe::fordJohnsonSort_d()
         }       
     }
     pairs = recursiveBiggersort_d(pairs);
-    
-    // std::sort(pairs.begin(), pairs.end());
     fill_main_pending_d(pairs, mainchain, pendingchain);
     insert_pendingelements_d(mainchain, pendingchain);
     mainchain.clear();
@@ -318,4 +302,11 @@ std::deque<std::pair<int ,int> > PmergeMe::recursiveBiggersort_d(std::deque<std:
     return merge;
 }
 
-
+size_t PmergeMe::size_deque()
+{
+    return d.size();
+}
+size_t PmergeMe::size_vector()
+{
+    return v.size();
+}

@@ -1,0 +1,18 @@
+cpp_module01/Warlock.cpp:42:24: error: comparison of integers of different signs: 'int' and 'std::__1::vector<ASpell *, std::__1::allocator<ASpell *> >::size_type' (aka 'unsigned long') [-Werror,-Wsign-compare]
+    for (int i = 0 ; i < spells.size(); i++)
+                     ~ ^ ~~~~~~~~~~~~~
+cpp_module01/Warlock.cpp:55:27: error: comparison of integers of different signs: 'int' and 'std::__1::vector<ASpell *, std::__1::allocator<ASpell *> >::size_type' (aka 'unsigned long') [-Werror,-Wsign-compare]
+       for (int i = 0 ; i < spells.size(); i++)
+                        ~ ^ ~~~~~~~~~~~~~
+2 errors generated.
+
+<--------------~-~-~-~-~-~-~-~-~------------>
+Richard: This looks like another boring day.$
+Richard: I am Richard, the Titled!$
+Target Practice Dummy has been fwooshed!$
+Richard: My job here is done!$
+\n
+<--------------~-~-~-~-~-~-~-~-~------------>\n\n
+<--------------~-~-~-~-~-~-~-~-~------------>
+\n
+<--------------~-~-~-~-~-~-~-~-~------------>
